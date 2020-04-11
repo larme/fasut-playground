@@ -1,6 +1,6 @@
 import struct, wave
 
-data = [i * 0.01 for i in range(10)]
+data = [i * 0.01 + 0.005 for i in range(10)]
 factor = 2 ** 15
 
 def main():
