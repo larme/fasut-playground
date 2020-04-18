@@ -1,7 +1,12 @@
+import sys
 import struct, wave
 
 def main():
-    with wave.open('out.wav', 'rb') as f:
+    if len(sys.argv) >= 2:
+        fname = sys.argv[1]
+    else:
+        fname = 'out.wav'
+    with wave.open(fname, 'rb') as f:
         nframes = f.getnframes()
         print("%d frames" % nframes)
         bs = f.readframes(nframes)
